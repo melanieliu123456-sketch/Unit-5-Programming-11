@@ -1,19 +1,31 @@
 void intro() {
-  background(255);
+  background(#D8EAF2);
   fill(0);
-  textSize(75);
-  text("Clicker Game", 300, 250);
+  textSize(65);
+  text("Clicker Game", 300, 190);
+
   fill(255);
-  rect(175, 350, 250, 100);
+  rect(175, 290, 250, 80);
   fill(0);
-  textSize(50);
-  text("Start", 300, 400);
+  textSize(45);
+  text("Start", 300, 330);
+
+  fill(255);
+  rect(175, 400, 250, 80);
+  fill(0);
+  textSize(45);
+  text("Options", 300, 440);
 }
 
-void introClicks() {
-  if (mode == intro) {
-    if (mouseX > 175 && mouseX < 425 && mouseY > 350 && mouseY < 450) {
-      mode = game;
-    }
+void IntroClicks() {
+  if (mouseX > 175 && mouseX < 425 && mouseY > 290 && mouseY < 370) {
+    resetGame();
+    mode = game;
+    buttonSound();
+  }
+
+  if (mouseX > 175 && mouseX < 425 && mouseY > 400 && mouseY < 480) {
+    mode = options;
+    buttonSound();
   }
 }

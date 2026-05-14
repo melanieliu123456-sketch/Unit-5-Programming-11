@@ -1,13 +1,13 @@
 void mouseReleased() {
   if (mode == intro) {
-    introClicks();
+    IntroClicks();
   } else if (mode == game) {
     gameClicks();
   } else if (mode == pause) {
     pauseClicks();
   } else if (mode == gameover) {
     gameoverClicks();
-  } else {
-    background(255);
+  } else if (mode == options) {
+    OptionsClicks();
   }
 }
