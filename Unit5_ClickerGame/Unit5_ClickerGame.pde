@@ -79,8 +79,3 @@ void resetGame() {
   vx = random(-5, 5);
   vy = random(-5, 5);
 }
-
-void buttonSound() {
-  coin.rewind();
-  coin.play();
-}

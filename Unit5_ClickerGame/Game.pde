@@ -43,7 +43,6 @@ void game() {
 void gameClicks() {
   if (mouseX > 20 && mouseX < 75 && mouseY > 20 && mouseY < 75) {
     mode = pause;
-    buttonSound();
   } else if (dist(mouseX, mouseY, x, y) < d/2) {
     score += 1;
     vx *= 1.1;

@@ -41,16 +41,12 @@ void options() {
 void OptionsClicks() {
   if (mouseX > 80 && mouseX < 200 && mouseY > 160 && mouseY < 260) {
     targetLook = 0;
-    buttonSound();
   } else if (mouseX > 240 && mouseX < 360 && mouseY > 160 && mouseY < 260) {
     targetLook = 1;
-    buttonSound();
   } else if (mouseX > 400 && mouseX < 520 && mouseY > 160 && mouseY < 260) {
     targetLook = 2;
-    buttonSound();
   } else if (mouseX > 440 && mouseX < 540 && mouseY > 520 && mouseY < 570) {
     mode = intro;
-    buttonSound();
   }
 }
 

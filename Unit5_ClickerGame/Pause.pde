@@ -21,6 +21,5 @@ void pause() {
 void pauseClicks() {
   if (mouseX > 20 && mouseX < 75 && mouseY > 20 && mouseY < 75) {
     mode = game;
-    buttonSound();
   }
 }

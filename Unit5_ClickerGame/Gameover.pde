@@ -1,4 +1,5 @@
 void gameover() {
+  theme.pause();
   background(#F0D7DB);
   fill(0);
   textSize(75);
@@ -19,4 +20,5 @@ void gameoverClicks() {
   mode = intro;
   gameoversound.pause();
   gameoversound.rewind();
+  theme.play();
 }

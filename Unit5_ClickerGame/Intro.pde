@@ -21,11 +21,8 @@ void IntroClicks() {
   if (mouseX > 175 && mouseX < 425 && mouseY > 290 && mouseY < 370) {
     resetGame();
     mode = game;
-    buttonSound();
   }
-
   if (mouseX > 175 && mouseX < 425 && mouseY > 400 && mouseY < 480) {
     mode = options;
-    buttonSound();
   }
 }
