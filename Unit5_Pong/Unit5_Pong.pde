@@ -14,12 +14,13 @@ final int gameover = 4;
 float leftx, lefty, leftd, rightx, righty, rightd;
 float ballx, bally, balld; //ball
 
-
+//keyboard variables
+boolean wkey, skey, upkey, downkey;
 
 void setup() {
   size(800, 600);
   background(0);
-  mode = intro;
+  mode = game;
   
   leftx = 0;
   lefty = height/2;
