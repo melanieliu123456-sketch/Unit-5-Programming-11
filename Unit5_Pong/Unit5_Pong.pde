@@ -4,7 +4,7 @@
 //Unit 5 Pong check point
 
 //mode framework
-int mode;
+int mode; 
 final int intro    = 1;
 final int game     = 2;
 final int pause    = 3;
@@ -34,6 +34,9 @@ void setup() {
   ballx = width/2;
   bally = height/2;
   balld = 100;
+  
+  wkey = skey = upkey = downkey = false;
+  
   
 }
 
