@@ -1,5 +1,7 @@
 void intro() {
-  background(0);
+  background(255);
+  leftscore = 0;
+  rightscore = 0;
 }
 
 void introclick() {
