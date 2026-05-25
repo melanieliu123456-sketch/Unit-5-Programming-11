@@ -3,6 +3,13 @@
 //May 15, 2026
 //Unit 5 Pong check point
 
+import ddf.minim.*;
+import ddf.minim.analysis.*;
+import ddf.minim.effects.*;
+import ddf.minim.signals.*;
+import ddf.minim.spi.*;
+import ddf.minim.ugens.*;
+
 //mode framework
 int mode;
 final int intro    = 1;
@@ -16,14 +23,20 @@ float ballx, bally, balld; //ball
 float vx, vy;
 
 //scoring
-int leftscore, rightscore, timer;
+int leftscore, rightscore, timer, pausetime;
 
 //keyboard variables
 boolean wkey, skey, upkey, downkey;
 
+//sound variable
+Minim minim;
+AudioPlayer theme, coin, bump, gameoversound;
+
 void setup() {
   size(800, 600);
+  textAlign(CENTER, CENTER);
 
+  pausetime = 10;
   leftx = 0;
   lefty = height/2;
   leftd = 200;
@@ -37,14 +50,22 @@ void setup() {
   bally = height/2;
   balld = 100;
 
-  mode = game;
+  mode = intro;
 
-  vx = 0;
-  vy = 0;
+  vx = random(-1, 1)*10;
+  vy = random(-1, 1)*10;
+  timer = pausetime;
   ballx += vx;
   bally += vy;
 
   wkey = skey = upkey = downkey = false;
+
+  minim = new Minim(this);
+  theme = minim.loadFile("MUSIC.mp3");
+  coin = minim.loadFile("coin.mp3");
+  gameoversound = minim.loadFile("gameover.mp3");
+  bump = minim.loadFile("bump.mp3");
+  theme.loop();
 }
 
 
