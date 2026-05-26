@@ -16,6 +16,7 @@ final int intro    = 1;
 final int game     = 2;
 final int pause    = 3;
 final int gameover = 4;
+boolean pauseyn = false;
 
 //entity variables
 float leftx, lefty, leftd, rightx, righty, rightd;
@@ -36,7 +37,7 @@ void setup() {
   size(800, 600);
   textAlign(CENTER, CENTER);
 
-  pausetime = 10;
+  pausetime = 50;
   leftx = 0;
   lefty = height/2;
   leftd = 200;
@@ -52,8 +53,8 @@ void setup() {
 
   mode = intro;
 
-  vx = random(-1, 1)*10;
-  vy = random(-1, 1)*10;
+  vx = random(-0.5, 0.5)*10;
+  vy = random(-0.5, 0.5)*10;
   timer = pausetime;
   ballx += vx;
   bally += vy;

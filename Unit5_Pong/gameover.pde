@@ -1,16 +1,20 @@
 void gameover() {
+  theme.pause();
+  gameoversound.rewind();
+  gameoversound.play();
+
   textSize(100);
   if (leftscore > rightscore) {
-      fill(#83CBCE);
-    text("Left Wins!", width/2, 300);
-  } else if(leftscore == rightscore) {
-    text("Tie game!", width/2, 300);
+    write("Left Wins!", width/2, 300, #83CBCE, 150);
+  } else if (leftscore == rightscore) {
+    write("Tie game!", width/2, 300, #C3C9C3, 150);
   } else {
-      fill(#E8A98A);
-    text("Right Wins!", width/2, 300);
+    write("Right Wins!", width/2, 300, #E8A98A, 150);
   }
 }
 
 void gameoverclick() {
   mode = intro;
+  theme.rewind();
+  theme.play();
 }
