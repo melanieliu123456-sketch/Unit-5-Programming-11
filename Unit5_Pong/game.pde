@@ -13,8 +13,24 @@ void game() {
     text(rightscore, 3*width/4, 100);
     timer -= 1;
 
-    if (leftscore == 1 || rightscore == 1) {
-      mode = gameover;
+    //gameover sound detect
+    if (oneplayer == false) {
+      if (leftscore == 3 || rightscore == 3) {
+        gameoverWin.rewind();
+        gameoverWin.play();
+        mode = gameover;
+      }
+    } else {
+      if (leftscore == 3) {
+        gameoverWin.rewind();
+        gameoverWin.play();
+        mode = gameover;
+      }
+      if (rightscore == 3) {
+        gameoverLose.rewind();
+        gameoverLose.play();
+        mode = gameover;
+      }
     }
 
     //paddles
@@ -23,16 +39,23 @@ void game() {
     fill(#E8A98A);
     circle(rightx, righty, rightd);
 
-
     //move paddles
     if (wkey == true) lefty -= 5;
     if (skey == true) lefty += 5;
     if (lefty < 0) lefty = 0;
     if (lefty > height) lefty = height;
-    if (upkey == true) righty -= 5;
-    if (downkey == true) righty += 5;
-    if (righty < 0) righty = 0;
-    if (righty > height) righty = height;
+
+    if (oneplayer == false) {
+      if (upkey == true) righty -= 5;
+      if (downkey == true) righty += 5;
+      if (righty < 0) righty = 0;
+      if (righty > height) righty = height;
+    } else {
+      if (ballx > width/2) {
+        if (righty > bally) righty -= 3;
+        if (righty < bally) righty += 3;
+      }
+    }
 
     //move ball
     if (timer < 0) {

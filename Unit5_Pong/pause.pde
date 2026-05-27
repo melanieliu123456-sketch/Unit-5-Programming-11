@@ -18,6 +18,7 @@ void write(String word, int x, int y, int Color, int size) {
   fill(Color);
   text(word, x, y);
 }
+
 void pauseclick() {
   pauseyn = false;
   mode = game;

@@ -17,6 +17,7 @@ final int game     = 2;
 final int pause    = 3;
 final int gameover = 4;
 boolean pauseyn = false;
+boolean oneplayer = true;
 
 //entity variables
 float leftx, lefty, leftd, rightx, righty, rightd;
@@ -31,7 +32,7 @@ boolean wkey, skey, upkey, downkey;
 
 //sound variable
 Minim minim;
-AudioPlayer theme, coin, bump, gameoversound;
+AudioPlayer theme, coin, bump, gameoverWin, gameoverLose;
 
 void setup() {
   size(800, 600);
@@ -53,8 +54,10 @@ void setup() {
 
   mode = intro;
 
-  vx = random(-0.5, 0.5)*10;
-  vy = random(-0.5, 0.5)*10;
+  float angle = random(TWO_PI);
+
+  vx = cos(angle) * 5;
+  vy = sin(angle) * 5;
   timer = pausetime;
   ballx += vx;
   bally += vy;
@@ -64,7 +67,8 @@ void setup() {
   minim = new Minim(this);
   theme = minim.loadFile("MUSIC.mp3");
   coin = minim.loadFile("coin.mp3");
-  gameoversound = minim.loadFile("gameover.mp3");
+  gameoverWin = minim.loadFile("gameover.mp3");
+  gameoverLose = minim.loadFile("gameover 2.mp3");
   bump = minim.loadFile("bump.mp3");
   theme.loop();
 }

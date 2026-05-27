@@ -26,7 +26,7 @@ void tactilerect (int x, int y, int w, int h) {//detect if mouse is on button
   if (mouseX > x && mouseX < x + w &&
     mouseY > y && mouseY < y + h) {
     strokeWeight(2);
-    stroke(255);
+    stroke(150);
   } else {
     strokeWeight(2);
     stroke(0);
