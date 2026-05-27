@@ -16,6 +16,8 @@ void gameover() {
 }
 
 void gameoverClicks() {
+  button.rewind();
+  button.play();
   resetGame();
   mode = intro;
   gameoversound.pause();

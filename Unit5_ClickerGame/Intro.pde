@@ -3,13 +3,15 @@ void intro() {
   fill(0);
   textSize(65);
   text("Clicker Game", 300, 190);
-
+  
+  tactilerect(175, 290, 250, 80);
   fill(255);
   rect(175, 290, 250, 80);
   fill(0);
   textSize(45);
   text("Start", 300, 330);
-
+  
+  tactilerect(175, 400, 250, 80);
   fill(255);
   rect(175, 400, 250, 80);
   fill(0);
@@ -19,10 +21,14 @@ void intro() {
 
 void IntroClicks() {
   if (mouseX > 175 && mouseX < 425 && mouseY > 290 && mouseY < 370) {
+    button.rewind();
+    button.play();
     resetGame();
     mode = game;
   }
   if (mouseX > 175 && mouseX < 425 && mouseY > 400 && mouseY < 480) {
+    button.rewind();
+    button.play();
     mode = options;
   }
 }

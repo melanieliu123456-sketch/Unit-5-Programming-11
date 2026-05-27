@@ -6,15 +6,18 @@ void options() {
 
   textSize(22);
   text("Choose target look", 300, 130);
-
+  
+  tactilerect(80, 160, 120, 100);
   fill(255);
   rect(80, 160, 120, 100);
   targetPreview(140, 210, 60, 0);
-
+  
+  tactilerect(240, 160, 120, 100);
   fill(255);
   rect(240, 160, 120, 100);
   targetPreview(300, 210, 60, 1);
-
+  
+  tactilerect(400, 160, 120, 100);
   fill(255);
   rect(400, 160, 120, 100);
   targetPreview(460, 210, 60, 2);
@@ -30,7 +33,7 @@ void options() {
   text("Target Size", 300, 385);
 
   targetPreview(300, 470, d, targetLook);
-
+  tactilerect(440, 520, 100, 50);
   fill(255);
   rect(440, 520, 100, 50);
   fill(0);
@@ -41,12 +44,20 @@ void options() {
 void OptionsClicks() {
   if (mouseX > 80 && mouseX < 200 && mouseY > 160 && mouseY < 260) {
     targetLook = 0;
+    button.rewind();
+    button.play();
   } else if (mouseX > 240 && mouseX < 360 && mouseY > 160 && mouseY < 260) {
     targetLook = 1;
+    button.rewind();
+    button.play();
   } else if (mouseX > 400 && mouseX < 520 && mouseY > 160 && mouseY < 260) {
     targetLook = 2;
+    button.rewind();
+    button.play();
   } else if (mouseX > 440 && mouseX < 540 && mouseY > 520 && mouseY < 570) {
     mode = intro;
+    button.rewind();
+    button.play();
   }
 }
 

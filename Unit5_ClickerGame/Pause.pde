@@ -2,7 +2,8 @@ void pause() {
   background(#D8EAF2);
 
   targetPreview(x, y, d, targetLook);
-
+  
+  tactilerect(20, 20, 55, 55);
   fill(0);
   textSize(70);
   text("PAUSE", 300, 260);
@@ -20,6 +21,8 @@ void pause() {
 
 void pauseClicks() {
   if (mouseX > 20 && mouseX < 75 && mouseY > 20 && mouseY < 75) {
+    button.rewind();
+    button.play();
     mode = game;
   }
 }

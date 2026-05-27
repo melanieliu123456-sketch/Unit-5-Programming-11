@@ -7,6 +7,7 @@ void game() {
   text("Lives: " + lives, 430, 550);
 
   //pause button
+  tactilerect(20, 20, 55, 55);
   fill(255);
   rect(20, 20, 55, 55);
   stroke(0);
@@ -42,6 +43,8 @@ void game() {
 
 void gameClicks() {
   if (mouseX > 20 && mouseX < 75 && mouseY > 20 && mouseY < 75) {
+    button.rewind();
+    button.play();
     mode = pause;
   } else if (dist(mouseX, mouseY, x, y) < d/2) {
     score += 1;

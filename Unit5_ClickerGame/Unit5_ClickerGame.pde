@@ -1,3 +1,4 @@
+//Melanie Liu
 //2-1
 //May 11, 2026
 //Unit 5 Clicker Game check point 
@@ -25,7 +26,7 @@ float sliderX;
 
 //sound variable
 Minim minim;
-AudioPlayer theme, coin, bump, gameoversound;
+AudioPlayer theme, coin, bump, gameoversound, button;
 
 void setup() {
   size(600, 600);
@@ -52,6 +53,7 @@ void setup() {
   coin = minim.loadFile("coin.mp3");
   gameoversound = minim.loadFile("gameover.mp3");
   bump = minim.loadFile("bump.mp3");
+  button = minim.loadFile("click.mp3");
   theme.loop();
 }
 
