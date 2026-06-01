@@ -53,11 +53,8 @@ void setup() {
   balld = 100;
 
   mode = intro;
-
-  float angle = random(TWO_PI);
-
-  vx = cos(angle) * 5;
-  vy = sin(angle) * 5;
+  vx = -5;
+  vy = 0;
   timer = pausetime;
   ballx += vx;
   bally += vy;

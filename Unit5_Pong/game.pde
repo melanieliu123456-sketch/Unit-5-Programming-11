@@ -59,8 +59,8 @@ void game() {
 
     //move ball
     if (timer < 0) {
-      ballx = ballx + vx;
-      bally = bally + vy;
+      ballx += vx;
+      bally += vy;
     }
     //scoring
     if (ballx < 0-balld) {//if right score
@@ -68,8 +68,8 @@ void game() {
       ballx = width/2;
       bally = height/2;
       timer = pausetime;
-      vx = random(-5, 5);
-      vy = random(-5, 5);
+      vx = -5;
+      vy = 0;
       coin.rewind();
       coin.play();
     }
@@ -78,8 +78,8 @@ void game() {
       ballx = width/2;
       bally = height/2;
       timer = pausetime;
-      vx = random(-5, 5);
-      vy = random(-5, 5);
+      vx = 5;
+      vy = 0;
       coin.rewind();
       coin.play();
     }
