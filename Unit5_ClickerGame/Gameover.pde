@@ -22,5 +22,6 @@ void gameoverClicks() {
   mode = intro;
   gameoversound.pause();
   gameoversound.rewind();
+  theme.rewind();
   theme.play();
 }
