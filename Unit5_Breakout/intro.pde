@@ -3,6 +3,8 @@ void intro() {
   fill(5, 81, 90);
   textSize(50);
   text("Breakout", 335, 380);
+  score = 0;
+  lives = 3;
 }
 
 void introclick() {
