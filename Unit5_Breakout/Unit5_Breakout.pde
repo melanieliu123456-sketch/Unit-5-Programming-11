@@ -16,6 +16,7 @@ final int intro    =  1;
 final int game     = 2;
 final int pause    = 3;
 final int gameover = 4;
+boolean pauseyn;
 
 //target variable
 int score, lives;
@@ -42,26 +43,30 @@ AudioPlayer theme, coin, bump, gameoverWin, gameoverLose;
 PFont font;
 
 void setup() {
+  strokeWeight(3);
+  stroke(255);
   size(800, 800);
   textAlign(CENTER, CENTER);
   font = createFont("Matcha Cih.otf", 128);
   textFont(font);
+  pauseyn = false;
   
   score = 0;
-  lives = 3;
+  lives = 5;
   brickd = 50;
-  n = 40;
+  n = 48;
   x = new float[n];
   y = new float[n];
   alive = new boolean[n];
   tempx = 87.5;
-  tempy = 87.5;
+  tempy = 100;
   int i = 0;
   while (i < n) {
     x[i] = tempx;
     y[i] = tempy;
     alive[i] = true;
     tempx += 87.5;
+    
     if (tempx > width-50) {
       tempx = 87.5;
       tempy +=87.5;

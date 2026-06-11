@@ -1,8 +1,10 @@
 void gameover() {
-  background(255);
+  background(#D8EAF2);
   if (lives == 0) {
-    textSize(100);
-    text("GAME OVER", width, height-200);
+    write("GAME OVER", width/2, height/2, 255, 100);
+  }
+  if (lives > 0) {
+    write("YOU WIN!", width/2, height/2, 255, 100);
   }
 }
 

@@ -1,8 +1,6 @@
 void intro() {
-  background(255);
-  fill(5, 81, 90);
-  textSize(50);
-  text("Breakout", 335, 380);
+  background(#D8EAF2);
+  write("Breakout", width/2, height/2, 255, 100);
   score = 0;
   lives = 3;
 }
