@@ -1,7 +1,7 @@
 void pause() {
   pauseyn = true;
   fill(0);
-  write("PAUSE", width/2, height/2, 255, 180);
+  write("PAUSE", width/2, height/2, 0, 180);
 }
 
 void pauseclick() {
@@ -11,7 +11,7 @@ void pauseclick() {
 
 void write(String word, int x, int y, int Color, int size) {
   textSize(size);
-  fill(0);
+  fill(255);
   text(word, x+3, y-3);
   text(word, x+3, y+3);
   text(word, x-3, y-3);

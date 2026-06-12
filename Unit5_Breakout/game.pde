@@ -1,14 +1,14 @@
 void game() {
   if (pauseyn == false) {
-    background(#D8EAF2);
+    background(0);
     fill(255);
     circle(ballx, bally, balld);
     circle(userx, height, userd);
     ballx += vx;
     bally += vy;
 
-    write("Score: " + score, 140, 30, 255, 30);
-    write("Lives " + lives, width - 140, 30, 255, 30);
+    write("Score: " + score, 140, 30, 0, 30);
+    write("Lives " + lives, width - 140, 30, 0, 30);
 
     if (lives == 0) {
       mode = gameover;
@@ -75,11 +75,11 @@ void gameclick() {
 
 void manageBrick(int i) {
   if (y[i] <= 187.5) {
-    fill(#EFA7A7);
+    fill(#C96951);
   } else if (y[i] <= 362.5) {
-    fill(#FFD966);
+    fill(#CBA752);
   } else {
-    fill(#95C2D8);
+    fill(#6186BC);
   }
   circle(x[i], y[i], brickd);
   if (dist(ballx, bally, x[i], y[i]) <= balld/2 + brickd/2) {

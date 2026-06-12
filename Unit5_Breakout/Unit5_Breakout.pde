@@ -3,6 +3,9 @@
 //Jun 1, 2026
 //Unit 5 Breakout check point
 
+PImage[] gif;
+int numberOfFrames, f;
+
 import ddf.minim.*;
 import ddf.minim.analysis.*;
 import ddf.minim.effects.*;
@@ -43,15 +46,23 @@ AudioPlayer theme, coin, bump, gameoverWin, gameoverLose;
 PFont font;
 
 void setup() {
-  strokeWeight(3);
+  pixelDensity(1);
+  strokeWeight(3);//drawing setup
   stroke(255);
   size(800, 800);
   textAlign(CENTER, CENTER);
   font = createFont("Matcha Cih.otf", 128);
   textFont(font);
   pauseyn = false;
-  
-  score = 0;
+
+  numberOfFrames = 43;//gif
+  gif = new PImage[numberOfFrames];
+
+  for (int i = 0; i < numberOfFrames; i++) {
+    gif[i] = loadImage("INTRO-" + (i+1) + " (dragged).jpeg");
+  }
+
+  score = 0;//game setup
   lives = 5;
   brickd = 50;
   n = 48;
@@ -66,7 +77,7 @@ void setup() {
     y[i] = tempy;
     alive[i] = true;
     tempx += 87.5;
-    
+
     if (tempx > width-50) {
       tempx = 87.5;
       tempy +=87.5;
