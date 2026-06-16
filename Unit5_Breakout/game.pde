@@ -74,9 +74,15 @@ void gameclick() {
 }
 
 void manageBrick(int i) {
-  if (y[i] <= 187.5) {
+  if (y[i] <= 100) {
     fill(#C96951);
-  } else if (y[i] <= 362.5) {
+  } else if (y[i] <= 100+87.5) {
+    fill(#CBA752);
+  } else if (y[i] <= 100+87.5*2) {
+    fill(#6186BC);
+  } else if (y[i] <= 100+87.5*3) {
+    fill(#C96951);
+  } else if (y[i] <= 100+87.5*4) {
     fill(#CBA752);
   } else {
     fill(#6186BC);

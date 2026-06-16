@@ -62,8 +62,6 @@ void setup() {
     gif[i] = loadImage("INTRO-" + (i+1) + " (dragged).jpeg");
   }
 
-  score = 0;//game setup
-  lives = 5;
   brickd = 50;
   n = 48;
   x = new float[n];
