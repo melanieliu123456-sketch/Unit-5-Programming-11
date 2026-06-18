@@ -4,35 +4,65 @@
 //Unit 5 personal project
 //connect 4
 
-//space
+PFont font;
+
+import ddf.minim.*;
+import ddf.minim.analysis.*;
+import ddf.minim.effects.*;
+import ddf.minim.signals.*;
+import ddf.minim.spi.*;
+import ddf.minim.ugens.*;
+
+//color variable
+color red = #F25F5F;
+color orange = #EAB36B;
+color yellow = #F2DE69;
+color green = #8AE08D;
+color blue = #86D6E5;
+color purple = #C4A8ED;
+color color1 = red;
+color color2 = blue;
+color strokecolor = 0;
+
+//mode
+int mode;
+final int intro    =  1;
+final int game     = 2;
+final int gameover = 3;
+
+//board
+int[][] board = new int[7][6];
 float[] x, y;
 float ballx, bally;
 int n = 6*7;
+int[] board = new int[42];
+float indicatorx = width/2;
+float indicatory = height;
+
+//player variable
+boolean player1 = true;
+
 
 void setup() {
+  textAlign(CENTER, CENTER);
   size(800, 800);
   background(255);
-  
+
+  font = createFont("Matcha Cih.otf", 128);
+  textFont(font);
+
   x = new float[n];
   y = new float[n];
-  ballx = width*0.2;
-  bally = height*0.2;
+
+  mode = intro;
 }
 
 void draw() {
-  strokeWeight(5);
-  fill(100);
-  rect(width*0.15, height*0.15, width*0.7, height*0.6, 10, 10, 0, 0);
-  for (int i = 0; i < n; i++) {
-    fill(255);
-    x[i] = ballx;
-    y[i] = bally;
-    circle(x[i], y[i], width/12);
-    ballx += width*0.1;
-    if (ballx > width*0.85) {
-      ballx = width*0.2;
-      bally = bally + height*0.1;
-    }
+  if (mode == intro) {
+    intro();
+  } else if (mode == game) {
+    game();
+  } else if (mode == gameover) {
+    gameover();
   }
-
 }
